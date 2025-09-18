@@ -1,0 +1,302 @@
+/* 
+Para ID se usa #{}
+Para clases se usa .{} 
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #DCD0E7;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+header{
+    font-family: 'Bangers', cursive;
+}
+
+#container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+header{
+    background-color: #d82ebc;
+    text-align: center;
+    color: white;
+    border-bottom: 3px solid black;
+    padding: 20px 10px;
+}
+
+header h1{
+    font-size: clamp(1.2rem, 4vw, 2rem); /* escala según ancho de pantalla */
+    line-height: 1.2;
+    word-wrap: break-word; /* evita que se desborde */
+}
+
+#logo{
+    height: auto;
+    max-height: 40px; /* controla tamaño */
+    width: auto;
+    max-width: 120px; /* para que no se coma el nav */
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: lightblue;
+    padding: 0 10px;
+    border-bottom: 1px solid black;
+    height: 60px; /* puedes ajustar */
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover{
+    color: white;
+}
+
+aside > ol{
+    list-style: none;
+}
+
+aside > ol > li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+aside > ol > li a:hover{
+    color: white;
+}
+
+/* SE ELIMINA DEL HTML Y DEL CSS.
+<div class="clearfix"></div> 
+.clearfix{
+    clear: both;
+} 
+*/
+
+.content{                              /* SECTION */
+    width: 100%;
+    min-height: 500px;
+    background-color: #EEE;
+    padding: 40px;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.article {
+    margin: 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.article:first-child{
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.article h2{
+    font-size: 1.6rem;
+}
+
+.section h2{
+    font-size: 1.6rem;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1rem;
+}
+
+aside{
+    padding-left: 40px;
+}
+
+p, li{
+    margin: 10px 0;
+    
+}
+
+
+/* Estilos para las imágenes */
+
+
+figure {
+    display: flex;
+    flex-wrap: wrap;        
+    justify-content: center;
+    gap: 15px;              /* separación entre imágenes */
+    margin: 20px 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 300px;       /* tamaño máximo por imagen */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;     /* bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;  /* contraste si la img tiene fondo transparente */
+    padding: 5px;
+}
+
+figure img:hover {
+    transform: scale(1.05);   /* zoom suave */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+figcaption {
+    flex-basis: 100%;       /* que ocupe toda la fila debajo de las imágenes */
+    font-style: italic;
+    color: #555;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    transition: border 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="email"]:focus {
+    border: 1px solid #d82ebc;
+    outline: none;
+}
+
+form input[type="submit"] {
+    background-color: #d82ebc;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #b32398;
+}
+
+/* media queries */
+
+
+/* Tablets y celulares grandes */
+@media (max-width: 992px) {
+    nav ul {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .content {                    /* SECTION */
+        padding: 30px;
+    }
+
+    .article h2 {
+        font-size: 1.4rem;
+    }
+
+    .section h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* celulares */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+}
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+}
+
+    nav ul li {
+        margin: 0;
+    }
+
+    header {
+        font-size: 1.2rem;
+        line-height: 60px;
+        height: 60px;
+    }
+
+    .content {                      /* SECTION */
+        padding: 20px;
+    }
+
+    .article h2 {
+        font-size: 1.2rem;
+    }
+
+    .section h2 {
+        font-size: 1.2rem;
+    }
+
+    figure img {
+        max-width: 180px;   /* reduce en pantallas más chicas */
+    }
+}
+
+@media (max-width: 480px) {
+    figure img {
+        max-width: 140px;
+    }
+}
